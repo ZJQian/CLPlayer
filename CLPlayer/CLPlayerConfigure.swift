@@ -111,6 +111,8 @@ public struct CLPlayerConfigure {
     public var isHiddenMorePanel = false
     /// 初始界面是否显示工具条
     public var isHiddenToolbarWhenStart = true
+    public var isTapGestureEnable = true
+
     /// 手势控制
     public var gestureInteraction = CLPlayerGestureInteraction.fullScreen
     /// 自动旋转类型

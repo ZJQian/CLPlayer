@@ -376,7 +376,9 @@ private extension CLPlayerContentView {
         addSubview(morePanelCollectionView)
         addSubview(placeholderStackView)
 
-        addGestureRecognizer(tapGesture)
+        if config.isTapGestureEnable {
+            addGestureRecognizer(tapGesture)
+        }
         addGestureRecognizer(panGesture)
 
         guard !config.isHiddenToolbarWhenStart else { return }

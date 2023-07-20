@@ -197,7 +197,7 @@ private extension CLPlayer {
     func initUI() {
         backgroundColor = .black
         addSubview(contentView)
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackgroundNoti), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterPlayground), name: UIApplication.didBecomeActiveNotification, object: nil)
         if !UIDevice.current.isGeneratingDeviceOrientationNotifications {
             UIDevice.current.beginGeneratingDeviceOrientationNotifications()
@@ -242,15 +242,15 @@ private extension CLPlayer {
         }
     }
 
-    func appDidEnterBackground() {
+    func appDidEnterBackgroundNoti() {
         isEnterBackground = true
         pause()
     }
 
     func appDidEnterPlayground() {
-        isEnterBackground = false
-        guard contentView.playState != .ended else { return }
-        play()
+//        isEnterBackground = false
+//        guard contentView.playState != .ended else { return }
+//        play()
     }
 }
 
